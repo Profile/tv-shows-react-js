@@ -7,3 +7,5 @@ export const commonRestConfig: AxiosRequestConfig = {
   baseURL: 'https://api.tvmaze.com/',
   timeout: 120000
 };
+
+export const DEFAULT_PATH = '/';

@@ -13,7 +13,7 @@ const MainRoutes = () => (
 
           return <Route key={route.path} path={route.path} element={<Component />} />;
         })}
-        <Route path="*" element={<Navigate to={routesList.home.path} replace />} />
+        {/* <Route path="*" element={<Navigate to={routesList.home.path} replace />} /> */}
       </Routes>
     </Suspense>
   </MainLayout>
