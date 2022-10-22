@@ -49,7 +49,9 @@ export const MainLayout = ({ children }: TProps) => {
         </div>
       </div>
       <div className="h-[50px]"></div>
-      <div id="content">{children}</div>
+      <div id="content" className="w-full flex justify-center">
+        <main className="max-w-[1200px] w-full">{children}</main>
+      </div>
     </>
   );
 };
