@@ -1,55 +1,29 @@
-import React, { useCallback } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 import { DEFAULT_PATH } from '../../consts';
 import BurgerMenu from '../../assets/svgs/burger.svg';
+import { SearchInput } from '../SearchInput';
+import { MenuList } from '../Menu/List';
 
 type TProps = {
   children: React.ReactNode;
 };
 
+const categories = ['drama', 'comedy', 'sports'];
+
 export const MainLayout = ({ children }: TProps) => {
-  let activeStyle = {
-    textDecoration: 'underline'
-  };
-
-  const pages = ['drama', 'comedy', 'sports'];
-
   const location = useLocation();
   const { pathname: currentPage } = location;
-
-  const generatePageName = useCallback((pageName: string) => `/category/${pageName}`, []);
 
   const handleMenu = () => {
     console.log('...');
   };
 
-  const renderMenu = () => {
-    return (
-      <nav className=" h-full">
-        <ul className="flex h-full">
-          {pages.map((item) => (
-            <li key={item}>
-              <NavLink
-                className={`flex items-center h-full capitalize px-3 ${
-                  currentPage === generatePageName(item) ? 'text-[#027aff]' : undefined
-                }`}
-                to={generatePageName(item)}
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
-              >
-                {item}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    );
-  };
-
   return (
     <>
       <div className="h-[50px] fixed w-full flex justify-center border-b-2 px-4">
-        <div className="max-w-[1200px] w-full h-full bg-red">
+        <div className="max-w-[1200px] w-full h-full bg-red flex">
           <div className="flex md:hidden items-center w-[30px]">
             <img
               onClick={handleMenu}
@@ -64,10 +38,13 @@ export const MainLayout = ({ children }: TProps) => {
             </div>
             <div className="mx-4 hidden md:block"></div>
             <div className="hidden md:flex items-center max-w-xs w-full">
-              <input type="search" className="bg-[#efefef] h-[36px] rounded-md p-3 w-full" />
+              <SearchInput />
             </div>
             <div className="mx-4 hidden md:block"></div>
-            <div className="hidden md:block">{renderMenu()}</div>
+            <div className="hidden md:block">
+              {/* TODO: Show for mobiles */}
+              <MenuList pages={categories} currentPage={currentPage} />
+            </div>
           </div>
         </div>
       </div>
