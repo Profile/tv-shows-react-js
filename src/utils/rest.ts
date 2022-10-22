@@ -59,7 +59,7 @@ export class HttpService {
     data: TRequestData,
     config: AxiosRequestConfig = {
       headers: {
-        Authorization: getAuthHeader()
+        //  Authorization: getAuthHeader()
       }
     }
   ): Promise<AxiosResponse> {
@@ -67,8 +67,7 @@ export class HttpService {
       ...commonRestConfig,
       ...config,
       headers: {
-        ...config.headers,
-        Authorization: getAuthHeader()
+        ...config.headers
       },
       data,
       method,
@@ -100,7 +99,7 @@ export class HttpService {
     url: string,
     config?: AxiosRequestConfig
   ): Promise<TResponseData> {
-    const response = await this.requestApi('get', url, {}, config);
+    const response = await this.requestApi('get', url, undefined, config);
     return response.data;
   }
 

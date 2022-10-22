@@ -16,13 +16,15 @@ export const MainLayout = ({ children }: TProps) => {
   const location = useLocation();
   const { pathname: currentPage } = location;
 
+  const searchQuery = new URLSearchParams(location.search).get('q');
+
   const handleMenu = () => {
     console.log('...');
   };
 
   return (
     <>
-      <div className="h-[50px] fixed w-full flex justify-center border-b-2 px-4">
+      <div className="h-[50px] fixed bg-white z-10 w-full flex justify-center border-b-2 px-4">
         <div className="max-w-[1200px] w-full h-full bg-red flex">
           <div className="flex md:hidden items-center w-[30px]">
             <img
@@ -34,11 +36,13 @@ export const MainLayout = ({ children }: TProps) => {
           </div>
           <div className="flex h-full flex-1 justify-end md:justify-start">
             <div className="main-logo flex items-center justify-center">
-              <Link to={DEFAULT_PATH}>Logo</Link>
+              <a href={DEFAULT_PATH}>Logo</a>
             </div>
             <div className="mx-4 hidden md:block"></div>
             <div className="hidden md:flex items-center max-w-xs w-full">
-              <SearchInput />
+              <form className="w-full" action="/search">
+                <SearchInput defaultValue={searchQuery as string} />
+              </form>
             </div>
             <div className="mx-4 hidden md:block"></div>
             <div className="hidden md:block">

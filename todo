@@ -8,8 +8,8 @@ Please include unit tests
 
 list (drama, comedy, sports, etc.).
 
-few popular TV shows based on their rating and genre
+few popular TV shows based on their rating and genre + 
 
-user clicks on a TV show then the details of that TV show should be displayed on another screen.
+user clicks on a TV show then the details of that TV show should be displayed on another screen. + 
 
 the user should be able to search for a TV show to get the details.
