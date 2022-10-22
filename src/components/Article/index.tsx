@@ -8,7 +8,10 @@ type TArticleProps = {
 
 export const Article = ({ article }: TArticleProps) => {
   return (
-    <article className="overflow-hidden rounded-md shadow-md relative hover:scale-105 transition delay-150 duration-150 ease-in-out">
+    <article
+      data-testid={`article-${article.id}`}
+      className="overflow-hidden rounded-md shadow-md relative hover:scale-105 transition delay-150 duration-150 ease-in-out"
+    >
       <Link to={`/article/${article.id}`}>
         {article.rating.average && (
           <div className="absolute px-3 py-1 bg-white rounded-md shadow-md right-3 top-3">
