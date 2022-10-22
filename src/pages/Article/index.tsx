@@ -38,7 +38,7 @@ export default function Home() {
             loading="lazy"
           />
         </div>
-        <div className="hidden md:block pl-10"></div>
+        <div className="hidden md:block pl-10" />
         <div className="max-w-[500px]">
           <h1 className="font-bold text-[30px] mt-4 mb-3">{articleData.name}</h1>
           <p className="ml-2 p-2 bg-slate-100">Rating: {articleData.rating.average}</p>
@@ -50,7 +50,6 @@ export default function Home() {
           <p className="ml-2">{articleData.summary.replace(/(<([^>]+)>)/gi, '')}</p>
         </div>
       </div>
-      <div></div>
     </div>
   );
 }
