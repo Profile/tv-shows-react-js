@@ -24,7 +24,7 @@ const article: TShowArticle = {
   }
 };
 
-describe('renders learn react link', () => {
+describe('<Article />', () => {
   it('should be in document', function () {
     render(
       <MemoryRouter>
