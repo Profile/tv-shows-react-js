@@ -21,8 +21,8 @@ export const MainLayout = ({ children }: TProps) => {
             <div className="main-logo flex items-center justify-center">
               <a href={DEFAULT_PATH}>Logo</a>
             </div>
-            <div className="mx-4 hidden md:block" />
-            <div className="hidden md:flex items-center max-w-xs w-full">
+            <div className="mx-4 block" />
+            <div className="flex items-center max-w-xs w-full">
               <form className="w-full" action="/search">
                 <SearchInput placeholder="Search shows..." defaultValue={searchQuery as string} />
               </form>
