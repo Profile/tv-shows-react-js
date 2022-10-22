@@ -1,3 +1,7 @@
+# Example
+
+<img src="./tv-shows-result.gif" width="500" height="300" />
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
